@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#060912">
+<title>Hoàng Văn Quyền · V4 Tech Romantic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="tech-grid"></div>
+<div class="noise"></div>
+<div class="vignette"></div>
+<div id="particles"></div>
+
+<main>
+<section class="scene active" id="loginScene">
+  <div class="login-wrap">
+    <h1>Có một điều nhỏ<br><em>dành riêng cho bro.</em></h1>
+    <p class="lead">Một ký ức riêng tư đã được mã hóa. Hệ thống cần đúng chìa khóa để tiếp tục.</p>
+
+    <form id="loginForm">
+      <label for="password">MẬT KHẨU</label>
+      <div class="login-line">
+        <span class="prefix">KEY://</span>
+        <input id="password" type="password" maxlength="6" inputmode="numeric" placeholder="••••••">
+        <button type="submit">XÁC NHẬN</button>
+      </div>
+      <div id="loginStatus" class="status"></div>
+    </form>
+
+    <button id="getKeyBtn" class="ghost-link">Chưa có chìa khóa? <b>→</b></button>
+  </div>
+  <span class="scene-count">01 / 08</span>
+</section>
+
+<section class="scene" id="decryptScene">
+  <div class="decrypt-layout">
+    <header>
+      <div class="hud-tag">⚿</div>
+      <h2>Phục hồi<br><em>ba fragment ký ức.</em></h2>
+      <p class="lead">Mỗi câu trả lời đúng sẽ phục hồi một fragment và gửi dữ liệu về lõi khóa.</p>
+    </header>
+
+    <div class="lock-zone">
+      <div class="scanner-beam"></div>
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+      <div class="axis axis-x"></div>
+      <div class="axis axis-y"></div>
+
+      <div class="lock-unit">
+        <div class="lock-shackle"></div>
+        <div class="lock-body">
+          <div class="keyhole"></div>
+        </div>
+      </div>
+
+      <div class="core-status">
+        <small>CORE STATUS</small>
+        <strong id="lockStatus">LOCKED</strong>
+      </div>
+    </div>
+
+    <div id="systemLog" class="system-log"><span>SYS</span> INITIALIZING SECURE MEMORY...</div>
+
+    <div class="fragments">
+      <article class="fragment" id="fragment1">
+        <div class="frag-top"><span>FRAGMENT 01</span><i>01</i></div>
+        <strong>_ _</strong>
+        <small>LOCKED</small>
+      </article>
+      <article class="fragment" id="fragment2">
+        <div class="frag-top"><span>FRAGMENT 02</span><i>02</i></div>
+        <strong>_ _</strong>
+        <small>LOCKED</small>
+      </article>
+      <article class="fragment" id="fragment3">
+        <div class="frag-top"><span>FRAGMENT 03</span><i>03</i></div>
+        <strong>_ _</strong>
+        <small>LOCKED</small>
+      </article>
+    </div>
+
+    <div class="question-panel">
+      <div class="question-meta"><span id="stepLabel">MẢNH KHÓA 01 / 03</span><span id="progressLabel">0 / 3</span></div>
+      <h3 id="questionText"></h3>
+      <p id="questionHint"></p>
+      <div id="answerGrid"></div>
+      <div id="questionStatus" class="status"></div>
+    </div>
+
+    <button id="backLoginBtn" class="ghost-link">← Quay lại đăng nhập</button>
+  </div>
+  <span class="scene-count">02 / 08</span>
+</section>
+
+<section class="scene centered" id="assembleScene">
+  <div class="assemble-core">
+    <div class="assemble-ring ar1"></div>
+    <div class="assemble-ring ar2"></div>
+    <div class="v157-access-scan" aria-hidden="true"></div>
+    <div class="v157-access-ring r3" aria-hidden="true"></div>
+    <div class="v157-access-ring r4" aria-hidden="true"></div>
+    <div class="assemble-diamond"><span></span></div>
+    <div class="v157-access-status" aria-hidden="true">
+      <span>IDENTITY VERIFIED</span>
+      <i>AUTH · ENCRYPTED MEMORY</i>
+    </div>
+    <div id="assembleTitle">ĐANG GHÉP CHÌA KHÓA...</div>
+    <p id="assembleValue">19 · 23 · 28</p>
+    <div class="loading-bar"><i></i></div>
+  </div>
+  <span class="scene-count">03 / 08</span>
+</section>
+
+<section class="scene centered" id="birthdayScene">
+  <div class="v114-birthday-gallery" aria-hidden="true">
+    <figure class="v114-bp p1"><img src="assets/photo1.jpg" alt=""></figure>
+    <figure class="v114-bp p2"><img src="assets/photo2.jpg" alt=""></figure>
+    <figure class="v114-bp p3"><img src="assets/photo3.jpg" alt=""></figure>
+    <figure class="v114-bp p4"><img src="assets/photo4.jpg" alt=""></figure>
+    <figure class="v114-bp p5"><img src="assets/photo5.jpg" alt=""></figure>
+    <figure class="v114-bp p6"><img src="assets/photo6.jpg" alt=""></figure>
+    <figure class="v114-bp p7"><img src="assets/photo7.jpg" alt=""></figure>
+    <figure class="v114-bp p8"><img src="assets/photo8.jpg" alt=""></figure>
+</div>
+
+  <div class="birthday-glow"></div>
+  <div class="cake-wrap">
+    <div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div>
+    <div class="candle c1"></div><div class="candle c2"></div><div class="candle c3"></div>
+    <div class="cake-cream"></div>
+    <div class="cake-body"></div>
+    <div class="cake-plate"></div>
+  </div>
+  <div class="birthday-audio-badge"><span></span><span></span><span></span><span></span><b>Birthday melody</b></div>
+  
+  <div class="flying-gallery" aria-hidden="true">
+    <figure class="fly-photo fp1"><img src="assets/photo1.jpg" alt=""><figcaption>Kỷ niệm đẹp ✨</figcaption></figure>
+    <figure class="fly-photo fp2"><img src="assets/photo2.jpg" alt=""><figcaption>Kỷ niệm đẹp ✨</figcaption></figure>
+    <figure class="fly-photo fp3"><img src="assets/photo3.jpg" alt=""><figcaption>Kỷ niệm đẹp ✨</figcaption></figure>
+    <figure class="fly-photo fp4 soft"><img src="assets/photo1.jpg" alt=""></figure>
+    <figure class="fly-photo fp5 soft"><img src="assets/photo2.jpg" alt=""></figure>
+    <figure class="fly-photo fp6 soft"><img src="assets/photo3.jpg" alt=""></figure>
+  </div>
+
+  <div class="birthday-copy">
+    <div class="hud-tag">ACCESS GRANTED</div>
+    <h2>Chúc mừng sinh nhật,<br><em>Anh.</em></h2>
+    <p>05 · 09 · 2026</p>
+  </div>
+  <span class="scene-count">04 / 08</span>
+  <div id="v158MemoryBridge" class="v158-memory-bridge" aria-hidden="true">
+    <div class="v158-bridge-copy">Trước khi đến ngày hôm nay,<br><span>đã có những ngày đáng nhớ.</span></div>
+    <div class="v158-cake-origin">
+      <i class="v158-fragment f1"></i><i class="v158-fragment f2"></i><i class="v158-fragment f3"></i>
+      <div class="v158-bridge-core">♡</div>
+    </div>
+    <div class="v160-node-preview" aria-hidden="true">
+      <span class="n1"><b>19/08/2026</b><small>MEMORY · 01</small></span>
+      <span class="n2"><b>23/08/2026</b><small>MEMORY · 02</small></span>
+      <span class="n3"><b>28/08/2026</b><small>MEMORY · 03</small></span>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="scene v92-memory-scene" id="memoryScene" tabindex="-1">
+  <div class="v91-space" aria-hidden="true">
+    <div class="v91-stars"></div>
+    <div class="v91-aurora"></div>
+    <div class="v157-chamber-grid" aria-hidden="true"></div>
+    <div class="v157-depth-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="v157-data-streams" aria-hidden="true"></div>
+    <div class="v91-orbit-line"></div>
+    <div class="v91-core"><span>♥</span></div>
+  </div>
+
+  <div class="v91-orbit" id="v91Orbit">
+    <button class="v91-card v157-date-card node-cyan" data-memory="0" type="button" aria-label="Mở ký ức ngày 19 tháng 08 năm 2026">
+      <span class="v91-polaroid v157-date-node">
+        <span class="v157-node-kicker">MEMORY · 01</span>
+        <b>19/08/2026</b>
+        <span class="v157-node-state">Bấm vô</span>
+      </span>
+    </button>
+    <button class="v91-card v157-date-card node-violet locked" data-memory="1" type="button" aria-label="Ký ức ngày 23 tháng 08 năm 2026 đang khóa" aria-disabled="true">
+      <span class="v91-polaroid v157-date-node">
+        <span class="v157-node-kicker">MEMORY · 02</span>
+        <b>23/08/2026</b>
+        <span class="v157-node-state">LOCKED</span>
+        <i class="v921-lock-badge" aria-hidden="true">⌁</i>
+      </span>
+    </button>
+    <button class="v91-card v157-date-card node-pink locked" data-memory="2" type="button" aria-label="Ký ức ngày 28 tháng 08 năm 2026 đang khóa" aria-disabled="true">
+      <span class="v91-polaroid v157-date-node">
+        <span class="v157-node-kicker">MEMORY · 03</span>
+        <b>28/08/2026</b>
+        <span class="v157-node-state">LOCKED</span>
+        <i class="v921-lock-badge" aria-hidden="true">⌁</i>
+      </span>
+    </button>
+
+    <aside class="v91-note" id="v91Note" aria-live="polite">
+      <div class="v91-note-fx"></div>
+      <div class="v91-note-head">
+        <span id="v91NoteCode">MEMORY NOTE</span>
+        <i id="v91NoteNo">I</i>
+      </div>
+      <div class="v91-note-line"></div>
+      <h3 id="v91NoteTitle"></h3>
+      <p id="v91NoteText"></p>
+      <small id="v91NoteStatus"></small>
+      <button class="v92-collect-btn" id="v92CollectBtn" type="button">GIỮ LẠI KÝ ỨC ♡</button>
+    </aside>
+
+    <div class="v91-collection" id="v91Collection" aria-label="Các mảnh ký ức đã thu thập">
+      <div class="v91-crystal" data-key="m1"><span>19/08/2026</span></div>
+      <div class="v91-crystal" data-key="m2"><span>23/08/2026</span></div>
+      <div class="v91-crystal" data-key="m3"><span>28/08/2026</span></div>
+    </div>
+  </div>
+
+  <div class="v91-vault" id="v91Vault" aria-hidden="true">
+    <div class="v922-vault-flash" aria-hidden="true"></div>
+    <div class="v922-vault-particles" aria-hidden="true"></div>
+    <div class="v91-vault-rings"><i></i><i></i><i></i></div>
+    <div class="v91-vault-core">
+      <span class="v91-slot s19">19/08/2026</span>
+      <span class="v91-slot s23">23/08/2026</span>
+      <span class="v91-slot s28">28/08/2026</span>
+      <div class="v91-lock"><i></i><b>♥</b></div>
+    </div>
+    <p id="v91VaultSub">3 MEMORIES COLLECTED</p>
+    <h3 id="v91VaultTitle">UNLOCKING SOMETHING SPECIAL...</h3>
+  </div>
+
+<div id="v93Constellation" class="v93-constellation" aria-hidden="true">
+  <div class="v93-space-glow"></div>
+  <div class="v93-memory-node n1"><span>19/08/2026</span></div>
+  <div class="v93-memory-node n2"><span>23/08/2026</span></div>
+  <div class="v93-memory-node n3"><span>28/08/2026</span></div>
+  <svg class="v93-heart-svg" viewBox="0 0 300 260" aria-hidden="true">
+    <path class="v93-heart-path" d="M150 225 C130 198 45 148 45 87 C45 35 108 24 150 72 C192 24 255 35 255 87 C255 148 170 198 150 225Z"/>
+  </svg>
+  <div class="v93-heart-core">♡</div>
+  <div class="v93-finale-text">BA KÝ ỨC · MỘT ĐIỀU MUỐN GIỮ LẠI</div>
+  <div class="v93-particle-field"></div>
+</div>
+</section>
+
+
+
+
+
+<section class="scene centered" id="giftScene">
+  <div class="gift-content">
+    <div class="hud-tag">MỘT ĐIỀU NỮA · 06</div>
+    <h2>Bấm vào đây để<br><em>thấy trái tim của tui.</em></h2>
+    <button id="giftBox" aria-label="Mở hộp quà">
+      <span class="gift-body"></span><span class="gift-lid"></span><span class="gift-ribbon"></span><span class="gift-light"></span>
+    </button>
+    <p id="giftHint">CHẠM ĐỂ MỞ</p>
+  </div>
+  <span class="scene-count">06 / 08</span>
+</section>
+
+<section class="scene" id="letterScene"><div id="v93LoveAtmosphere" class="v93-love-atmosphere" aria-hidden="true"></div>
+  <div class="heart-burst-layer" id="heartBurstLayer" aria-hidden="true"></div>
+  <div class="letter-wrap">
+    <div class="hud-tag">MỘT LÁ THƯ · 07</div>
+    <article class="letter-card"><div class="v922-paper-lines" aria-hidden="true"></div><div class="v922-paper-margin" aria-hidden="true"></div><span class="v922-paper-heart" aria-hidden="true">♡</span>
+      <small>05 / 09 / 2026</small>
+      <h2>Gửi Quyền,</h2>
+      
+<p>Em đã nghĩ khá lâu không biết nên viết gì trong lá thư này....</p>
+<p>Vì mình mới ở bên nhau chưa lâu, có lẽ vẫn còn rất nhiều điều về anh mà em chưa biết, và cũng còn rất nhiều điều về em mà anh chưa kịp hiểu.</p>
+<p>Nhưng khoảng thời gian chưa dài ấy lại đủ để em bắt đầu nhớ một vài điều rất nhỏ.</p>
+<p>Em nhớ lần đầu mình gặp nhau. Nhớ một ngày mưa anh đến đón em. Và nhớ cả khoảnh khắc mà mối quan hệ của mình có một cái tên khác.</p>
+<p>Thật ra em không biết sau này chúng ta sẽ có thêm bao nhiêu câu chuyện. Em chỉ mong khi anh nhìn lại sinh nhật này, anh sẽ nhớ rằng đã từng có một người ngồi làm những thứ hơi ngốc nghếch như thế này chỉ vì muốn anh vui.</p>
+<p>Tuổi mới, mong anh khỏe, bình an, làm được những điều anh muốn, và có nhiều ngày vui hơn những ngày mệt.</p>
+<p>Còn chuyện của hai đứa mình…</p>
+<p>Em chưa biết mình sẽ được bao lâu.</p>
+<p>Nhưng em sẽ....<br>Sẽ không bao giờ rời xa anh.<br>Sẽ đi cùng anh đến nhiều nơi hơn.</p>
+<p>Và nếu được, em cũng muốn mình có thêm thật nhiều sinh nhật bên nhau để còn chúc anh như thế này.</p>
+<p>Chúc mừng sinh nhật anh.</p>
+<p><em>Yeu khọm già cụa tui nhiềuuuuuuuuuuuuu.</em></p>
+
+    </article>
+    <div class="v111-letter-finish">
+    <button id="v111FinalBtn" type="button" aria-hidden="true">
+      PUSH <span>→</span>
+    </button>
+  </div>
+    
+  </div><span class="scene-count">07 / 08</span>
+  <div id="v94Ending" class="v94-ending" aria-hidden="true">
+    <div class="v94-ending-glow"></div><div class="v94-ending-particles" aria-hidden="true"></div>
+    <div class="v94-ending-content">
+      <div class="v94-ending-kicker">FOR YOU · 05 / 09</div>
+      <h2>CHÚC MỪNG SINH NHẬT<br><em>ANH.</em> <span>♡</span></h2>
+      <p>Hẹn anh ở những ký ức tiếp theo.</p><small>05 · 09 · 2026</small>
+      <button id="v94ReplayBtn" type="button">↺&nbsp;&nbsp; XEM LẠI TỪ ĐẦU</button>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<audio id="loginMusic" src="assets/login.mp3" loop preload="auto"></audio>
+<audio id="birthdayMusic" src="assets/birthday_piano.mp3" preload="auto"></audio>
+<audio id="memoryMusic" src="assets/memory_yeu5.mp3" loop preload="auto"></audio>
+<audio id="letterMusic" src="assets/letter_conca.mp3" loop preload="auto"></audio>
+<script src="script.js"></script>
+</body>
+</html>
